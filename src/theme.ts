@@ -1,44 +1,21 @@
-import { createTheme } from "@mui/material/styles";
-import color from "@mui/material/colors/red";
+import { createTheme } from "@mui/material";
+import { colors } from "@mui/material";
+// import './theme-mod'
 
-export type Mode = "Light" | "Dark" | "System" | "Undefined";
-export const LightMode = "Light";
-export const DarkMode = "Dark";
-export const SystemMode = "System";
-export const UndefinedMode = "Undefined";
-
-type CustomTheme = {
+export const theme = createTheme({
   palette: {
-    primary: {
-      main: string;
-    };
     secondary: {
-      main: string;
-    };
-  };
-  custom: {
-    color: string;
-  };
-  status: {
-    failure: string;
-  };
-};
-
-const theme: CustomTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#ff4400"
+      main: colors.orange[500]
     },
-    secondary: {
-      main: "#00ff00"
+    neutral: {
+      main: colors.grey[500],
+      darker: colors.grey[700]  
     }
   },
   status: {
-    failure: color[500]
+    danger: "#e53e3e",
   },
-  custom: {
-    color: "#0000ff"
+  tag: {
+    label: "My Theme Label String"
   }
 });
-
-export default theme;
